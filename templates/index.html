@@ -1,0 +1,149 @@
+<html>
+	<header>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="styles.css">
+		<title>Material calculator</title>
+	</header>
+	<body>
+		<nav class="navbar navbar-light bg-light">
+		  <span class="navbar-text text-center center" style="width: 50%;margin-left: auto;margin-right: auto;">
+		    Calculator
+		  </span>
+		</nav>
+
+
+		<br><br>
+
+
+		<div class="container">
+
+
+
+<form action="/" method="post">
+
+
+
+  <div class="form-row">
+  	<div class="form-group col-md-2">
+      <label>Material</label>
+      <div class="form-control"> Metal </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="metal-element">Element</label>
+      <select id="metal-element" name="metal-element" class="form-control">
+        <option value="">Choose...</option>
+        <option value="ALUMINIO">Aluminio</option>
+        <option value="CINC">Cinc</option>
+        <option value="ESTANIO">Estaño</option>
+        <option value="NIQUEL">Niquel</option>
+        <option value="PLOMO">Plomo</option>
+        <option value="ORO">Oro</option>
+        <option value="COBRE">Cobre</option>
+        <option value="CROMO">Cromo</option>
+        <option value="HIERRO">Hierro</option>
+        <option value="PLATA">Plata</option>
+        <option value="MERCURIO">Mercurio</option>
+        <option value="PLATINO">Platino</option>
+        <option value="BRONCE">Bronce</option>
+        <option value="LATON">Laton</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="metal-volume">Volume (cm3)</label>
+      <input type="number" class="form-control" id="metal-volume" name="metal-volume" value=0 min=0 step="0.01">
+    </div>
+  </div>
+
+
+
+
+  <div class="form-row">
+  	<div class="form-group col-md-2">
+      <label>Material</label>
+      <div class="form-control"> Plastic </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="plastic-filament">Filament</label>
+      <select id="plastic-filament" name="plastic-filament" class="form-control">
+        <option value="" selected>Choose...</option>
+        <option value="PLA">PLA</option>
+        <option value="ABS">ABS</option>
+        <option value="PETG">PETG</option>
+        <option value="NYLON">NYLON</option>
+        <option value="TPU">Flexible (TPU)</option>
+        <option value="PC">Policarbonato (PC)</option>
+        <option value="MADERA">Madera</option>
+        <option value="FIBRACARBONO">Fibra de Carbono</option>
+        <option value="PCABS">PC/ABS</option>
+        <option value="HIPS">HIPS</option>
+        <option value="PVA">PVA</option>
+        <option value="ASA">ASA</option>
+        <option value="PP">Polipropileno (PP)</option>
+        <option value="POM">Acetal (POM)</option>
+        <option value="PMMA">PMMA</option>
+        <option value="FPE">Semiflexible (FPE)</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="plastic-volume">Volume (cm3)</label>
+      <input type="number" class="form-control" id="plastic-volume" name="plastic-volume" value=0 min=0 step="0.01">
+    </div>
+  </div>
+ 
+
+
+
+
+  <div class="form-row">
+  	<div class="form-group col-md-2">
+      <label>Material</label>
+      <div class="form-control"> Concrete </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="concrete-type">Type</label>
+      <select id="concrete-type" name="concrete-type" class="form-control">
+        <option value="normal" selected>Normal</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="concrete-volume">Volume (m3)</label>
+      <input type="number" class="form-control" id="concrete-volume" name="concrete-volume" value=0 min=0 step="0.01">
+    </div>
+  </div>
+
+
+
+  <button type="submit" class="btn btn-primary">Calculate</button>
+</form>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Material</th>
+      <th scope="col">Type</th>
+      <th scope="col">Volume</th>
+      <th scope="col">Mass</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for row in table_results %}
+    <tr>
+    	<th scope="row">{{ row["mat"] }}</th>
+      	<td>{{ row["type"] }}</td>
+      	<td>{{ row["volume"] }}</td>
+      	<td>{{ row["mass"] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+		</div>
+	</body>
+	<script type="text/javascript">
+if (window.history.replaceState) { // verificamos disponibilidad
+    window.history.replaceState(null, null, window.location.href);
+}
+</script>
+</html>
