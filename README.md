@@ -6,6 +6,9 @@ https://2022.spaceappschallenge.org/challenges/2022-challenges/mars-habitat/team
 This project is a software that complements the designs proposed as a solution in the competition.
 Its function is to estimate the amount of material needed for 3D prints
 
+![alt text](screenshot.png)
+
+
 If you want to view the project, you must:
 1) Clone the repository
 2) Go to the root folder using the command console
